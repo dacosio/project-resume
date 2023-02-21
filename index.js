@@ -1,3 +1,5 @@
+// scroll effects
+
 const navbar = document.querySelector("header");
 window.onscroll = () => {
   if (window.scrollY > 100) {
@@ -25,7 +27,7 @@ function reveal() {
 
 window.addEventListener("scroll", reveal);
 
-//
+//open Tab on skills and experiences
 
 function openTab(evt, payload) {
   let i, tabContent, tabLinks;
@@ -41,5 +43,4 @@ function openTab(evt, payload) {
   evt.currentTarget.className += " active";
 }
 
-// Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();

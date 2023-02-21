@@ -1,3 +1,7 @@
+/* ********************* */
+/* All Photos used are owned by Don Cosio */
+/* ********************** */
+
 /* variables */
 :root {
   --rich-black: #000411;
@@ -9,6 +13,7 @@
   --chamoise: #91785d;
   --bittersweet: #f97068;
   --yellowish: #fcf300;
+  --peach: #d8b3b2;
 }
 
 /* Reset */
@@ -20,6 +25,7 @@ body {
   box-sizing: border-box;
   font-family: "Space Grotesk", sans-serif;
   scroll-behavior: smooth;
+  min-width: 320px;
 }
 
 .wrapper {
@@ -417,7 +423,7 @@ img {
 }
 
 .query {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 4px;
   color: var(--bittersweet);
   text-transform: uppercase;
@@ -429,7 +435,9 @@ img {
 }
 
 #about h1,
-#skills h1 {
+#skills h1,
+#projects h1,
+#contact h1 {
   color: var(--cream);
   padding: 0.5rem 0;
   text-align: center;
@@ -568,7 +576,143 @@ img {
   border: 1px solid var(--yellowish);
 }
 
+.square i {
+  color: white;
+  cursor: pointer;
+  visibility: hidden;
+  vertical-align: middle;
+  font-size: 1rem;
+  padding-top: 35%;
+  margin: auto;
+}
+
+.square {
+  text-align: center;
+  width: 50vw;
+  height: 40vw;
+}
+
+.square {
+  margin: auto;
+}
+
+.square:hover i {
+  visibility: visible;
+}
+
+.square:hover {
+  background: var(--chamoise);
+  transition: 2s;
+}
+
+.dashboard {
+  background: url(./assets/dashboard.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 1rem;
+}
+
+.shoretrade {
+  background: url(./assets/shoretrade.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 1rem;
+}
+
+.martec {
+  background: url(./assets/martec.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 1rem;
+}
+.airbnb {
+  background: url(./assets/airbnb.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 1rem;
+}
+.gmail {
+  background: url(./assets/gmail.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 1rem;
+}
+.linkedin {
+  background: url(./assets/linkedin.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 1rem;
+}
 /* End of skills & experiences*/
+
+/* Start of Footer */
+
+.contact-grid {
+  background-color: var(--cream);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.left div {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.left div p {
+  margin: 0;
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+form input,
+textarea {
+  width: 100%;
+  margin-bottom: 0.2rem;
+  box-sizing: border-box;
+  outline: none;
+}
+
+form input:focus,
+textarea:focus,
+form input:hover,
+textarea:hover {
+  border-color: var(--peach);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 500px;
+}
+
+#submitBtn {
+  background: var(--chamoise);
+  color: var(--cream);
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#submitBtn:hover {
+  transform: scale(0.95);
+}
+
+footer .copyright {
+  color: var(--cream);
+  text-align: center;
+}
+
+/* End of Footer */
 
 /* Tablet */
 @media screen and (min-width: 600px) {
@@ -626,5 +770,47 @@ img {
 
   .experience-grid hr {
     display: none;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .square {
+    text-align: center;
+    width: 40vw;
+    height: 30vw;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.5rem;
+  }
+  .name {
+    display: flex;
+  }
+  .mobile-email {
+    display: flex;
+  }
+
+  #email,
+  #lastName {
+    margin-left: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1024px;
+  }
+
+  .square {
+    text-align: center;
+    width: 20rem;
+    height: 15rem;
   }
 }
