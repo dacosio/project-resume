@@ -10,83 +10,113 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://kit.fontawesome.com/60b0b8e6ef.css"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/60b0b8e6ef.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Project 1 - Resume</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="wrapper">
+      <header class="cssanimation fadeInBottom">
+        <nav class="nav-sticky">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <main>
-      <section class="hero" id="home">
-        <div class="profile">
-          <img src="./assets/hero.jpg" alt="Don Cosio image" />
-        </div>
-        <h2>I am <span>Don Cosio</span></h2>
-        <p>Full Stack Developer</p>
-        <div class="hero-text">
-          <h1 class="word design">Design.</h1>
-          <h1 class="word develop">Develop.</h1>
-          <h1 class="word test">Test.</h1>
-          <h1 class="word deploy">Deploy.</h1>
-        </div>
-        <!-- <span class="button"><a href="">Download CV</a></span> -->
-      </section>
-      <section id="about">
-        <div class="hr"></div>
-        <div class="query">Who am I?</div>
-        <h3>About Me</h3>
-        <div class="about-grid">
-          <div class="box">
-            <div class="hover-point"></div>
-            <div class="hover-point"></div>
-            <div class="hover-point"></div>
-            <div class="hover-point"></div>
-            <div class="hover-point"></div>
-            <div class="hover-point"></div>
-            <div class="hover-point"></div>
-            <div class="hover-point"></div>
-            <div class="box-contents"></div>
+      <main>
+        <section class="hero" id="home">
+          <div class="profile">
+            <img src="./assets/hero.jpg" alt="Don Cosio image" />
           </div>
-          <p class="query-desc">
-            Don is a <span class="fullstack">fullstack web developer</span> with
-            a bachelor's degree in electrical engineering. He
-            <span class="fortune">
-              worked for multiple Fortune 500 company
-            </span>
-            like Cisco Systems, Fluor Daniel Inc., and Airliquide. He went to a
-            coding bootcamp in Hong Kong and is currently taking post-degree
-            diploma in web and mobile applications.
-          </p>
-        </div>
-      </section>
-      <!-- <section>
-        <div class="box">
-          <div class="hover-point"></div>
-          <div class="hover-point"></div>
-          <div class="hover-point"></div>
-          <div class="hover-point"></div>
-          <div class="hover-point"></div>
-          <div class="hover-point"></div>
-          <div class="hover-point"></div>
-          <div class="hover-point"></div>
-          <div class="box-contents"></div>
-        </div>
-      </section> -->
-    </main>
+          <h2>I am <span>Don Cosio</span></h2>
+          <p>Full Stack Developer</p>
+          <div class="hero-text">
+            <h1 class="word design">Design.</h1>
+            <h1 class="word develop">Develop.</h1>
+            <h1 class="word test">Test.</h1>
+            <h1 class="word deploy">Deploy.</h1>
+          </div>
+          <!-- <span class="button"><a href="">Download CV</a></span> -->
+        </section>
+        <section id="about">
+          <div class="hr reveal"></div>
+          <div class="query reveal">Who am I?</div>
+          <h1 class="reveal">About Me</h1>
+          <div class="about-grid reveal">
+            <div class="box">
+              <div class="hover-point"></div>
+              <div class="hover-point"></div>
+              <div class="hover-point"></div>
+              <div class="hover-point"></div>
+              <div class="hover-point"></div>
+              <div class="hover-point"></div>
+              <div class="hover-point"></div>
+              <div class="hover-point"></div>
+              <div class="box-contents"></div>
+            </div>
+            <p class="query-desc">
+              Don is a
+              <span class="fullstack">fullstack web developer</span> with a
+              bachelor's degree in electrical engineering. He
+              <span class="fortune">
+                worked for multiple Fortune 500 company
+              </span>
+              like Cisco Systems, Fluor Daniel Inc., and Airliquide. He went to
+              a coding bootcamp in Hong Kong and is currently taking post-degree
+              diploma in web and mobile applications development in Vancouver.
+            </p>
+          </div>
+          <div class="cv">
+            <a href="./assets/cv.pdf" download>Download CV</a>
+          </div>
+        </section>
+        <section id="skills" class="reveal">
+          <div class="hr"></div>
+          <div class="query">Proficiency</div>
+          <h1>Skills and Experience</h1>
+          <div class="tab">
+            <button
+              class="tabLinks"
+              onclick="openTab(event, 'Skills')"
+              id="defaultOpen"
+            >
+              Skills
+            </button>
+            <button class="tabLinks" onclick="openTab(event, 'Experiences')">
+              Experiences
+            </button>
+          </div>
+
+          <div id="Skills" class="tabContent skills-grid">
+            <div class="skills-grid">
+              <i class="fa-brands fa-python"></i>
+              <i class="fa-brands fa-js"></i>
+              <i class="fa-brands fa-react"></i>
+              <i class="fa-brands fa-node"></i>
+              <i class="fa-brands fa-vuejs"></i>
+              <i class="fa-brands fa-docker"></i>
+              <i class="fa-solid fa-database"></i>
+              <i class="fa-brands fa-linux"></i>
+            </div>
+          </div>
+
+          <div id="Experiences" class="tabContent">
+            <p>2021 -2023</p>
+            <h6>Consulting Engineer (Fullstack Developer)</h6>
+            <p>Cisco Systems</p>
+          </div>
+        </section>
+        <section></section>
+      </main>
+    </div>
   </body>
 </html>

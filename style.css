@@ -22,11 +22,86 @@ body {
   scroll-behavior: smooth;
 }
 
+.wrapper {
+  max-width: 1024px;
+  margin: auto;
+}
+
+/* start of fade in of load of the page */
+
+main {
+  animation: fadein 3s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* end of fade in of load of the page */
+
+/* start of header and nav css */
 header {
   position: sticky;
   top: 0;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeInBottom {
+  animation-name: fadeInBottom;
+}
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nav-active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
 }
 
 nav li {
@@ -52,8 +127,6 @@ nav a {
   padding: 0.2rem;
 }
 
-/* pseudo elements */
-
 nav a:hover,
 nav a:focus {
   background-color: #e91e63;
@@ -63,13 +136,14 @@ nav a:focus {
   background: linear-gradient(90deg, #3f51b5, transparent) #2d93ad;
   border-radius: 5rem;
 }
+/* end of header and nav css */
 
+/* start of hero */
 .profile {
   height: 80px;
   width: 80px;
   display: block;
   margin: auto;
-  /* padding-top: 2rem; */
 }
 
 img {
@@ -160,8 +234,9 @@ img {
     color: var(--color-1);
   }
 }
+/* end of hero */
 
-/* start of tilt effect */
+/* start of tilt effect on about me photo*/
 .box {
   position: relative;
   width: 150px;
@@ -179,11 +254,16 @@ img {
   transition: 0.5s ease;
   border-radius: 10%;
 }
+
+.box-contents:hover {
+  box-shadow: 0 0 50px gold, 0 0 150px gold;
+}
 .hover-point {
   position: absolute;
   z-index: 2;
   width: calc(100% / 3);
   height: calc(100% / 3);
+  border-radius: 10%;
 }
 .hover-point:nth-child(1) {
   top: 0;
@@ -221,16 +301,19 @@ img {
   box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.3);
   transform-origin: right top;
   transform: perspective(1000px) rotateX(10deg) rotateY(-10deg) rotateZ(2deg);
+  box-shadow: 0 0 50px gold, 0 0 150px gold;
 }
 .hover-point:nth-child(2):hover ~ .box-contents {
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
   transform-origin: center top;
   transform: perspective(1000px) rotateX(10deg);
+  box-shadow: 0 0 50px gold, 0 0 150px gold;
 }
 .hover-point:nth-child(3):hover ~ .box-contents {
   box-shadow: -15px 15px 50px rgba(0, 0, 0, 0.3);
   transform-origin: left top;
   transform: perspective(1000px) rotateX(10deg) rotateY(10deg) rotateZ(-2deg);
+  box-shadow: 0 0 50px gold, 0 0 150px gold;
 }
 .hover-point:nth-child(4):hover ~ .box-contents {
   box-shadow: 15px 5px 50px rgba(0, 0, 0, 0.3);
@@ -241,21 +324,25 @@ img {
   box-shadow: -15px 5px 50px rgba(0, 0, 0, 0.3);
   transform-origin: right center;
   transform: perspective(1000px) rotateY(10deg);
+  box-shadow: 0 0 50px gold, 0 0 150px gold;
 }
 .hover-point:nth-child(6):hover ~ .box-contents {
   box-shadow: 15px -15px 50px rgba(0, 0, 0, 0.3);
   transform-origin: right bottom;
   transform: perspective(1000px) rotateX(-10deg) rotateY(-10deg) rotateZ(-2deg);
+  box-shadow: 0 0 50px gold, 0 0 150px gold;
 }
 .hover-point:nth-child(7):hover ~ .box-contents {
   box-shadow: 0 -15px 50px rgba(0, 0, 0, 0.3);
   transform-origin: center bottom;
   transform: perspective(1000px) rotateX(-10deg);
+  box-shadow: 0 0 50px gold, 0 0 150px gold;
 }
 .hover-point:nth-child(8):hover ~ .box-contents {
   box-shadow: -15px -15px 50px rgba(0, 0, 0, 0.3);
   transform-origin: left bottom;
   transform: perspective(1000px) rotateX(-10deg) rotateY(10deg) rotateZ(2deg);
+  box-shadow: 0 0 50px gold, 0 0 150px gold;
 }
 
 /* end of tilt effect */
@@ -325,8 +412,8 @@ img {
   background: linear-gradient(270deg, #13adc7 0%, #945dd6 100%);
   border-radius: 50px;
   margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .query {
@@ -341,16 +428,16 @@ img {
   color: var(--cream);
 }
 
-#about h3 {
+#about h1,
+#skills h1 {
   color: var(--cream);
   padding: 0.5rem 0;
   text-align: center;
-  margin: 0;
+  margin: 2rem;
+  font-size: 30px;
 }
 
-.about-grid {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr; */
+.query-desc {
   padding: 1rem;
   text-align: justify;
 }
@@ -360,4 +447,124 @@ img {
 }
 .fortune {
   color: var(--yellowish);
+}
+
+/* start of scroll transition */
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* end of scroll transition */
+
+/* Start of download CV effect */
+
+.cv {
+  text-align: center;
+  margin: 1rem 0;
+  animation: bounce 2s infinite alternate;
+}
+@keyframes bounce {
+  to {
+    transform: scale(0.9);
+  }
+}
+.cv a {
+  color: var(--cream);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  background-color: var(--chamoise);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* End of download CV effect */
+
+/* Start of skills & experiences*/
+.tab {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.tab button {
+  background-color: var(--cream);
+  border-radius: 8px;
+  text-transform: uppercase;
+  color: var(--rich-black);
+  font-size: 8px;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.tab button.active {
+  background-color: var(--pumpkin);
+  color: var(--cream);
+}
+
+#Experiences {
+  color: white;
+}
+
+.tabContent {
+  display: none;
+  animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 2rem;
+}
+
+.skills-grid i {
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* End of skills & experiences*/
+
+/* Tablet */
+@media screen and (min-width: 600px) {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .query-desc {
+    margin-right: 2rem;
+    padding: 0;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 2rem;
+  }
 }
