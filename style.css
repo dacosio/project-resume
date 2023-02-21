@@ -549,6 +549,25 @@ img {
   }
 }
 
+.experience-grid {
+  text-align: center;
+}
+
+.experience-grid h4,
+.experience-grid .company {
+  margin: 0;
+}
+
+.company {
+  font-size: 12px;
+  color: gray;
+}
+
+.experience-grid hr {
+  width: 10px;
+  border: 1px solid var(--yellowish);
+}
+
 /* End of skills & experiences*/
 
 /* Tablet */
@@ -566,5 +585,46 @@ img {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 2rem;
+  }
+
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 5rem;
+    grid-row-gap: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .experience-grid div:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 2;
+    text-align: center;
+  }
+
+  .experience-grid div:nth-child(2) {
+    grid-area: 1 / 2 / 2 / 3;
+    width: 200px;
+  }
+
+  .experience-grid div:nth-child(3) {
+    grid-area: 2 / 1 / 3 / 2;
+    text-align: center;
+  }
+  .experience-grid div:nth-child(4) {
+    grid-area: 2 / 2 / 3 / 3;
+    width: 200px;
+  }
+  .experience-grid div:nth-child(5) {
+    grid-area: 3 / 1 / 4 / 2;
+    text-align: center;
+  }
+  .experience-grid div:nth-child(6) {
+    grid-area: 3 / 2 / 4 / 3;
+    width: 200px;
+  }
+
+  .experience-grid hr {
+    display: none;
   }
 }
