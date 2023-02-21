@@ -179,9 +179,10 @@ img {
   text-align: center;
   margin-top: 1rem;
 }
-.hero-text h1 {
+.hero-text p {
   margin: 0;
   padding: 0;
+  font-size: 4rem;
 }
 
 .word {
@@ -427,16 +428,19 @@ img {
   color: var(--cream);
 }
 
-#about h1,
-#skills h1,
-#projects h1,
 #contact h1 {
   color: var(--cream);
   padding: 0.5rem 0;
   text-align: center;
   margin: 2rem;
 }
-
+.head-info {
+  color: var(--cream);
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem;
+  text-align: center;
+}
 .query-desc {
   padding: 1rem;
   text-align: justify;
